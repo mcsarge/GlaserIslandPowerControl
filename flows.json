@@ -604,12 +604,11 @@
         "debounce": "25",
         "read": false,
         "bcm": true,
-        "x": 120,
-        "y": 80,
+        "x": 100,
+        "y": 40,
         "wires": [
             [
-                "d36b11303cafd020",
-                "8e7f112711f45234"
+                "68b79d7ec0a0f6fd"
             ]
         ]
     },
@@ -622,62 +621,23 @@
         "links": [
             "d529dcbc02dffd41"
         ],
-        "x": 695,
-        "y": 40,
+        "x": 645,
+        "y": 160,
         "wires": []
-    },
-    {
-        "id": "8b7f2a2f20ee7e75",
-        "type": "toggle",
-        "z": "7f359afa7c82b177",
-        "name": "",
-        "onOffTopic": "OnOff",
-        "onValue": "on",
-        "onType": "str",
-        "offValue": "off",
-        "offType": "str",
-        "toggleTopic": "toggle",
-        "toggleValue": "",
-        "toggleType": "any",
-        "passOnOff": "",
-        "x": 470,
-        "y": 40,
-        "wires": [
-            [
-                "50bb0145fb53bab1"
-            ]
-        ]
-    },
-    {
-        "id": "d36b11303cafd020",
-        "type": "function",
-        "z": "7f359afa7c82b177",
-        "name": "SendToggleOn0",
-        "func": "if (msg.payload===0) {\n    msg.payload=999\n    msg.topic=\"toggle\"\n    return msg;\n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 40,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "8e7f112711f45234",
         "type": "function",
         "z": "7f359afa7c82b177",
-        "name": "",
-        "func": "\n//If the button was pushed check to see if all\n//any cameras are on, if so, turn them all off.\n//If none are ON, then turn the all on.\nif (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr1\", \"ssr3\"]);\n    if (values[0] === \"on\" || values[1]===\"on\")\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
+        "name": "HandleCameraButtonOnOff",
+        "func": "if (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr1\", \"ssr3\"]);\n    var anyOn = false;\n    \n    values.forEach(function(element) {\n        anyOn = ((element===\"on\") || anyOn) \n    });\n    \n    //If any cameras are on, turn them off, else turn them on.\n    if (anyOn)\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 140,
+        "x": 340,
+        "y": 160,
         "wires": [
             [
                 "50bb0145fb53bab1",
@@ -697,9 +657,29 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
-        "y": 160,
+        "x": 690,
+        "y": 60,
         "wires": []
+    },
+    {
+        "id": "68b79d7ec0a0f6fd",
+        "type": "rbe",
+        "z": "7f359afa7c82b177",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 40,
+        "wires": [
+            [
+                "8e7f112711f45234"
+            ]
+        ]
     },
     {
         "id": "769681dcab9816b7",
@@ -932,7 +912,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 550,
+        "x": 290,
         "y": 620,
         "wires": [
             [
@@ -961,7 +941,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 550,
+        "x": 290,
         "y": 580,
         "wires": [
             [
