@@ -1,0 +1,12 @@
+{
+    "name": "GlaserIslandPowerControl",
+    "description": "Node Red software to run the input buttons and the SSRs that control the low voltage devices on the island.",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}

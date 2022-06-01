@@ -1,0 +1,1831 @@
+[
+    {
+        "id": "1e68cdaa21355b19",
+        "type": "tab",
+        "label": "SSR Relays",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7f359afa7c82b177",
+        "type": "tab",
+        "label": "Hardware In",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac8518c67cca00b6",
+        "type": "tab",
+        "label": "UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4d2fddc2c3c4ae2f",
+        "type": "tab",
+        "label": "Message Injector",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fc8709ea054c7378",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Glaser Island Power Control",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 45,
+                "sy": 45,
+                "gx": 3,
+                "gy": 3,
+                "cx": 3,
+                "cy": 3,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "0054ec6595865cb5",
+        "type": "ui_group",
+        "name": "Systems",
+        "tab": "71e29ec56fb62885",
+        "order": 2,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "71e29ec56fb62885",
+        "type": "ui_tab",
+        "name": "Load Controls",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "86eedad9b66f38a7",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "8ffbdfea25a9910c",
+        "order": 1,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "900b995987962dbb",
+        "type": "mqtt-broker",
+        "name": "glaserisland",
+        "broker": "remotepi.glaserisland.pertino.net",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8ffbdfea25a9910c",
+        "type": "ui_tab",
+        "name": "Send Message",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "546e1c49835206a3",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 4",
+        "pin": "21",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "22dcda3c8db87790",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 3",
+        "pin": "20",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3dc40ad26957ea46",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 2",
+        "pin": "16",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b20ab3e7daced781",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 1",
+        "pin": "12",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bb389f5415113535",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 3 In",
+        "links": [
+            "6e3fa7ba92c18f0a"
+        ],
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "56d567189b12cfc8"
+            ]
+        ]
+    },
+    {
+        "id": "08f41307ddaff97c",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 1 In",
+        "links": [
+            "769681dcab9816b7"
+        ],
+        "x": 145,
+        "y": 60,
+        "wires": [
+            [
+                "75230b4b1b0ff792"
+            ]
+        ]
+    },
+    {
+        "id": "1516a47085072a0a",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 2 In",
+        "links": [
+            "798832e86fe2c071"
+        ],
+        "x": 145,
+        "y": 100,
+        "wires": [
+            [
+                "493630b6574fbced"
+            ]
+        ]
+    },
+    {
+        "id": "49607b3a350eaace",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 4 In",
+        "links": [
+            "0fb148d26f411966"
+        ],
+        "x": 145,
+        "y": 180,
+        "wires": [
+            [
+                "2a01f9ea75501c40"
+            ]
+        ]
+    },
+    {
+        "id": "75230b4b1b0ff792",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 60,
+        "wires": [
+            [
+                "b20ab3e7daced781"
+            ]
+        ]
+    },
+    {
+        "id": "aae1088e8683b5f7",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 8",
+        "pin": "26",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "993779e6a242e08c",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 8 In",
+        "links": [
+            "259178ac1b19abf8"
+        ],
+        "x": 145,
+        "y": 340,
+        "wires": [
+            [
+                "acb14804e4ca1545"
+            ]
+        ]
+    },
+    {
+        "id": "d5cdf181c841d9ea",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 5",
+        "pin": "25",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "25e716c547c8bfee",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 5 In",
+        "links": [
+            "99fa75565cf068fe"
+        ],
+        "x": 145,
+        "y": 220,
+        "wires": [
+            [
+                "bdf6746cb6dafd35"
+            ]
+        ]
+    },
+    {
+        "id": "2d3ad309e5666051",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 6",
+        "pin": "18",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "76eb26e0a7705d01",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 6 In",
+        "links": [
+            "36b6fff6d7a61eca"
+        ],
+        "x": 145,
+        "y": 260,
+        "wires": [
+            [
+                "8ab6e6627c9ec83d"
+            ]
+        ]
+    },
+    {
+        "id": "aa1dc8dfe663245d",
+        "type": "rpi-gpio out",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 7",
+        "pin": "19",
+        "set": false,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 530,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "20fee993f989d3b7",
+        "type": "link in",
+        "z": "1e68cdaa21355b19",
+        "name": "SSR 7 In",
+        "links": [
+            "207a2571dfd3b3ab"
+        ],
+        "x": 145,
+        "y": 300,
+        "wires": [
+            [
+                "8c836e5656032a5a"
+            ]
+        ]
+    },
+    {
+        "id": "493630b6574fbced",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "3dc40ad26957ea46"
+            ]
+        ]
+    },
+    {
+        "id": "56d567189b12cfc8",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "22dcda3c8db87790"
+            ]
+        ]
+    },
+    {
+        "id": "2a01f9ea75501c40",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "546e1c49835206a3"
+            ]
+        ]
+    },
+    {
+        "id": "bdf6746cb6dafd35",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "d5cdf181c841d9ea"
+            ]
+        ]
+    },
+    {
+        "id": "8ab6e6627c9ec83d",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "2d3ad309e5666051"
+            ]
+        ]
+    },
+    {
+        "id": "8c836e5656032a5a",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "aa1dc8dfe663245d"
+            ]
+        ]
+    },
+    {
+        "id": "acb14804e4ca1545",
+        "type": "function",
+        "z": "1e68cdaa21355b19",
+        "name": "Changeto0or1",
+        "func": "if(msg.payload===true || msg.payload ===\"on\"){\n    msg.payload=0\n} else if (msg.payload === false || msg.payload === \"off\") {\n    msg.payload=1\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "aae1088e8683b5f7"
+            ]
+        ]
+    },
+    {
+        "id": "22355200a771903d",
+        "type": "rpi-gpio in",
+        "z": "7f359afa7c82b177",
+        "name": "Big Red Button",
+        "pin": "24",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "d36b11303cafd020",
+                "8e7f112711f45234"
+            ]
+        ]
+    },
+    {
+        "id": "50bb0145fb53bab1",
+        "type": "link out",
+        "z": "7f359afa7c82b177",
+        "name": "ButtonOut",
+        "mode": "link",
+        "links": [
+            "d529dcbc02dffd41"
+        ],
+        "x": 695,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8b7f2a2f20ee7e75",
+        "type": "toggle",
+        "z": "7f359afa7c82b177",
+        "name": "",
+        "onOffTopic": "OnOff",
+        "onValue": "on",
+        "onType": "str",
+        "offValue": "off",
+        "offType": "str",
+        "toggleTopic": "toggle",
+        "toggleValue": "",
+        "toggleType": "any",
+        "passOnOff": "",
+        "x": 470,
+        "y": 40,
+        "wires": [
+            [
+                "50bb0145fb53bab1"
+            ]
+        ]
+    },
+    {
+        "id": "d36b11303cafd020",
+        "type": "function",
+        "z": "7f359afa7c82b177",
+        "name": "SendToggleOn0",
+        "func": "if (msg.payload===0) {\n    msg.payload=999\n    msg.topic=\"toggle\"\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e7f112711f45234",
+        "type": "function",
+        "z": "7f359afa7c82b177",
+        "name": "",
+        "func": "\n//If the button was pushed check to see if all\n//any cameras are on, if so, turn them all off.\n//If none are ON, then turn the all on.\nif (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr1\", \"ssr3\"]);\n    if (values[0] === \"on\" || values[1]===\"on\")\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "50bb0145fb53bab1",
+                "ec0ac3081e66c652"
+            ]
+        ]
+    },
+    {
+        "id": "ec0ac3081e66c652",
+        "type": "debug",
+        "z": "7f359afa7c82b177",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "769681dcab9816b7",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 1 Switch Out",
+        "mode": "link",
+        "links": [
+            "08f41307ddaff97c",
+            "d48c4da4af747715"
+        ],
+        "x": 695,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2582884b54e260f1",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 1",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR1",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 80,
+        "wires": [
+            [
+                "769681dcab9816b7",
+                "5bd7a3214a8a9226"
+            ]
+        ]
+    },
+    {
+        "id": "6e3fa7ba92c18f0a",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 3 Switch Out",
+        "mode": "link",
+        "links": [
+            "8b47f6e37a21194b",
+            "bb389f5415113535"
+        ],
+        "x": 695,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ed60ab23df9fba7d",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 3",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR3",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "6e3fa7ba92c18f0a",
+                "bbc52c0a17fd9b10"
+            ]
+        ]
+    },
+    {
+        "id": "4425eb83cfaa57a6",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 2",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR2",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "798832e86fe2c071",
+                "dde98dcc4909b7ef"
+            ]
+        ]
+    },
+    {
+        "id": "89da729de0bfd596",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 4",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR4",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "0fb148d26f411966",
+                "de0e94cbb5cb103a"
+            ]
+        ]
+    },
+    {
+        "id": "798832e86fe2c071",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 2 Switch Out",
+        "mode": "link",
+        "links": [
+            "1516a47085072a0a"
+        ],
+        "x": 685,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0fb148d26f411966",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 4 Switch Out",
+        "mode": "link",
+        "links": [
+            "49607b3a350eaace"
+        ],
+        "x": 695,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d529dcbc02dffd41",
+        "type": "link in",
+        "z": "ac8518c67cca00b6",
+        "name": "Button In",
+        "links": [
+            "50bb0145fb53bab1"
+        ],
+        "x": 145,
+        "y": 20,
+        "wires": [
+            [
+                "2582884b54e260f1",
+                "ed60ab23df9fba7d"
+            ]
+        ]
+    },
+    {
+        "id": "33f26fbf9a38d319",
+        "type": "ui_button",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "group": "0054ec6595865cb5",
+        "order": 10,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Cameras Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "2582884b54e260f1",
+                "ed60ab23df9fba7d"
+            ]
+        ]
+    },
+    {
+        "id": "528ce1ece284917f",
+        "type": "ui_button",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "group": "0054ec6595865cb5",
+        "order": 9,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Cameras On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "on",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "2582884b54e260f1",
+                "ed60ab23df9fba7d"
+            ]
+        ]
+    },
+    {
+        "id": "99fa75565cf068fe",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 5 Switch Out",
+        "mode": "link",
+        "links": [
+            "25e716c547c8bfee"
+        ],
+        "x": 695,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c0650ff2bdb9d429",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 5",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR5",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "99fa75565cf068fe",
+                "9ca2276e32387770"
+            ]
+        ]
+    },
+    {
+        "id": "36b6fff6d7a61eca",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 6 Switch Out",
+        "mode": "link",
+        "links": [
+            "76eb26e0a7705d01"
+        ],
+        "x": 695,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "544828c4a11919a1",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 6",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR6",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 380,
+        "wires": [
+            [
+                "36b6fff6d7a61eca",
+                "e16259c9fe078280"
+            ]
+        ]
+    },
+    {
+        "id": "207a2571dfd3b3ab",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 7 Switch Out",
+        "mode": "link",
+        "links": [
+            "20fee993f989d3b7"
+        ],
+        "x": 695,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "57e8efa8db66ba38",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 7",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR7",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "207a2571dfd3b3ab",
+                "4972fa429039376d"
+            ]
+        ]
+    },
+    {
+        "id": "259178ac1b19abf8",
+        "type": "link out",
+        "z": "ac8518c67cca00b6",
+        "name": "SSR 8 Switch Out",
+        "mode": "link",
+        "links": [
+            "993779e6a242e08c"
+        ],
+        "x": 695,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2c7109c40b5afa01",
+        "type": "ui_switch",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "label": "SSR 8",
+        "tooltip": "",
+        "group": "0054ec6595865cb5",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "SSR8",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 500,
+        "wires": [
+            [
+                "259178ac1b19abf8",
+                "60ea22bbb6a3ea65"
+            ]
+        ]
+    },
+    {
+        "id": "3d8138704fe1fac2",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr1",
+        "payloadType": "global",
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "2582884b54e260f1"
+            ]
+        ]
+    },
+    {
+        "id": "5bd7a3214a8a9226",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f4ae0a5b5130151",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr2",
+        "payloadType": "global",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "4425eb83cfaa57a6"
+            ]
+        ]
+    },
+    {
+        "id": "11a1c7752f9ca94d",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr3",
+        "payloadType": "global",
+        "x": 310,
+        "y": 200,
+        "wires": [
+            [
+                "ed60ab23df9fba7d"
+            ]
+        ]
+    },
+    {
+        "id": "66e73b3fff03f40c",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr4",
+        "payloadType": "global",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "89da729de0bfd596"
+            ]
+        ]
+    },
+    {
+        "id": "0377d6bdd681ab67",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr5",
+        "payloadType": "global",
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "c0650ff2bdb9d429"
+            ]
+        ]
+    },
+    {
+        "id": "a4a65fbc7ec561f3",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr6",
+        "payloadType": "global",
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "544828c4a11919a1"
+            ]
+        ]
+    },
+    {
+        "id": "4db20a7ddde5c519",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr7",
+        "payloadType": "global",
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "57e8efa8db66ba38"
+            ]
+        ]
+    },
+    {
+        "id": "9eece5a3de206342",
+        "type": "inject",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::ssr8",
+        "payloadType": "global",
+        "x": 310,
+        "y": 500,
+        "wires": [
+            [
+                "2c7109c40b5afa01"
+            ]
+        ]
+    },
+    {
+        "id": "dde98dcc4909b7ef",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbc52c0a17fd9b10",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr3",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr3",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de0e94cbb5cb103a",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr4",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr4",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ca2276e32387770",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr5",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr5",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e16259c9fe078280",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr6",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr6",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4972fa429039376d",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr7",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr7",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60ea22bbb6a3ea65",
+        "type": "change",
+        "z": "ac8518c67cca00b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::ssr8",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ssr6",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4dc1648db1522a08",
+        "type": "ui_form",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "label": "Message to LED Matrix",
+        "group": "86eedad9b66f38a7",
+        "order": 1,
+        "width": "10",
+        "height": "2",
+        "options": [
+            {
+                "label": "Lines (2 only, 10 char. each)",
+                "value": "line",
+                "type": "multiline",
+                "required": true,
+                "rows": 2
+            },
+            {
+                "label": "Display Time",
+                "value": "mins",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "line": "",
+            "mins": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "91627d6510c6cb07",
+                "20206009481d630e"
+            ]
+        ]
+    },
+    {
+        "id": "91627d6510c6cb07",
+        "type": "function",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "func": "var local = context.get('data') || {};\nif (local.color === undefined) \n{\n    local.color = \"0,255,0\"\n}\n\nvar newMsg = {};\n\nif (msg.topic===\"color\")\n{\n    //Remember the color that was set.\n    local.color = msg.payload.substr(4, msg.payload.length - 5);\n    context.set('data', local);\n    return null;\n}\nelse if (msg.topic === \"clear\")\n{\n    newMsg.payload =\n    {\n        message: 'clear',\n        rgb: \"0.0.0\",\n        displayTime: 1\n    }\n}\nelse\n{\n    var theMsg = msg.payload.line.replace(\"\\n\",\"/\");\n\n    var theMins = 5;\n    if (msg.payload.mins != undefined)\n    {\n        theMins = msg.payload.mins\n    }\n\n    newMsg.payload = \n    {\n        message: theMsg,\n        rgb: local.color,\n        displayTime: theMins\n    }\n}\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "20206009481d630e",
+                "d8493fbee8735897"
+            ]
+        ]
+    },
+    {
+        "id": "20206009481d630e",
+        "type": "debug",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "93c8bad711e3f993",
+        "type": "ui_colour_picker",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "label": "Message Color",
+        "group": "86eedad9b66f38a7",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 2,
+        "width": "5",
+        "height": "3",
+        "passthru": true,
+        "topic": "color",
+        "topicType": "str",
+        "className": "",
+        "x": 260,
+        "y": 400,
+        "wires": [
+            [
+                "91627d6510c6cb07",
+                "284eb3030f495282"
+            ]
+        ]
+    },
+    {
+        "id": "d8493fbee8735897",
+        "type": "mqtt out",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "Messages",
+        "topic": "GlaserIsland/messages",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "900b995987962dbb",
+        "x": 950,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "284eb3030f495282",
+        "type": "debug",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "326289deb13ee510",
+        "type": "ui_button",
+        "z": "4d2fddc2c3c4ae2f",
+        "name": "",
+        "group": "86eedad9b66f38a7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Clear Message",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "clear",
+        "topicType": "str",
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "91627d6510c6cb07"
+            ]
+        ]
+    }
+]
