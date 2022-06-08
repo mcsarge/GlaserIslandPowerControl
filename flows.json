@@ -135,7 +135,7 @@
         "tab": "71e29ec56fb62885",
         "order": 2,
         "disp": true,
-        "width": "3",
+        "width": "6",
         "collapse": false,
         "className": ""
     },
@@ -616,7 +616,7 @@
         "id": "50bb0145fb53bab1",
         "type": "link out",
         "z": "7f359afa7c82b177",
-        "name": "ButtonOut",
+        "name": "CameraButtonOut",
         "mode": "link",
         "links": [
             "d529dcbc02dffd41"
@@ -630,7 +630,7 @@
         "type": "function",
         "z": "7f359afa7c82b177",
         "name": "HandleCameraButtonOnOff",
-        "func": "if (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr1\", \"ssr3\"]);\n    var anyOn = false;\n    \n    values.forEach(function(element) {\n        anyOn = ((element===\"on\") || anyOn) \n    });\n    \n    //If any cameras are on, turn them off, else turn them on.\n    if (anyOn)\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
+        "func": "if (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr1\", \"ssr2\"]);\n    var anyOn = false;\n    \n    values.forEach(function(element) {\n        anyOn = ((element===\"on\") || anyOn) \n    });\n    \n    //If any cameras are on, turn them off, else turn them on.\n    if (anyOn)\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -650,7 +650,7 @@
         "type": "debug",
         "z": "7f359afa7c82b177",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -658,7 +658,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 690,
-        "y": 60,
+        "y": 240,
         "wires": []
     },
     {
@@ -682,6 +682,77 @@
         ]
     },
     {
+        "id": "e9d6988dfb92a5c0",
+        "type": "rpi-gpio in",
+        "z": "7f359afa7c82b177",
+        "name": "Starlink Button",
+        "pin": "5",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "c860375514f42ca3"
+            ]
+        ]
+    },
+    {
+        "id": "06cb6edf7eb89a1b",
+        "type": "function",
+        "z": "7f359afa7c82b177",
+        "name": "HandleStarlinkButtonOnOff",
+        "func": "if (msg.payload /= 0) {\n    return null;\n}\nelse\n{\n    var values = global.get([\"ssr5\"]);\n    var anyOn = false;\n    \n    values.forEach(function(element) {\n        anyOn = ((element===\"on\") || anyOn) \n    });\n    \n    //If any cssr are on, turn them off, else turn them on.\n    if (anyOn)\n    {\n        msg.payload = \"off\";\n    }\n    else\n    {\n        msg.payload = \"on\"\n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "ec0ac3081e66c652",
+                "ea8d70c97288f962"
+            ]
+        ]
+    },
+    {
+        "id": "c860375514f42ca3",
+        "type": "rbe",
+        "z": "7f359afa7c82b177",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "06cb6edf7eb89a1b"
+            ]
+        ]
+    },
+    {
+        "id": "ea8d70c97288f962",
+        "type": "link out",
+        "z": "7f359afa7c82b177",
+        "name": "StarlinkButtonOut",
+        "mode": "link",
+        "links": [
+            "ab6e81fd2df51ce8"
+        ],
+        "x": 635,
+        "y": 320,
+        "wires": []
+    },
+    {
         "id": "769681dcab9816b7",
         "type": "link out",
         "z": "ac8518c67cca00b6",
@@ -691,8 +762,8 @@
             "08f41307ddaff97c",
             "d48c4da4af747715"
         ],
-        "x": 695,
-        "y": 80,
+        "x": 705,
+        "y": 40,
         "wires": []
     },
     {
@@ -700,8 +771,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 1",
-        "tooltip": "",
+        "label": "POE Router (Cams)",
+        "tooltip": "SSR 1",
         "group": "0054ec6595865cb5",
         "order": 1,
         "width": 0,
@@ -721,7 +792,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 530,
+        "x": 580,
         "y": 80,
         "wires": [
             [
@@ -750,7 +821,7 @@
         "z": "ac8518c67cca00b6",
         "name": "",
         "label": "SSR 3",
-        "tooltip": "",
+        "tooltip": "SSR 3",
         "group": "0054ec6595865cb5",
         "order": 3,
         "width": 0,
@@ -784,8 +855,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 2",
-        "tooltip": "",
+        "label": "Tower PT Cam",
+        "tooltip": "SSR 2",
         "group": "0054ec6595865cb5",
         "order": 2,
         "width": 0,
@@ -805,7 +876,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 530,
+        "x": 560,
         "y": 140,
         "wires": [
             [
@@ -819,8 +890,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 4",
-        "tooltip": "",
+        "label": "Outdoor WiFi",
+        "tooltip": "SSR 4",
         "group": "0054ec6595865cb5",
         "order": 4,
         "width": 0,
@@ -840,7 +911,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 530,
+        "x": 550,
         "y": 260,
         "wires": [
             [
@@ -879,7 +950,7 @@
         "id": "d529dcbc02dffd41",
         "type": "link in",
         "z": "ac8518c67cca00b6",
-        "name": "Button In",
+        "name": "CameraButtonIn",
         "links": [
             "50bb0145fb53bab1"
         ],
@@ -888,7 +959,7 @@
         "wires": [
             [
                 "2582884b54e260f1",
-                "ed60ab23df9fba7d"
+                "4425eb83cfaa57a6"
             ]
         ]
     },
@@ -912,12 +983,12 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 290,
+        "x": 310,
         "y": 620,
         "wires": [
             [
                 "2582884b54e260f1",
-                "ed60ab23df9fba7d"
+                "4425eb83cfaa57a6"
             ]
         ]
     },
@@ -941,12 +1012,12 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 290,
-        "y": 580,
+        "x": 310,
+        "y": 560,
         "wires": [
             [
                 "2582884b54e260f1",
-                "ed60ab23df9fba7d"
+                "4425eb83cfaa57a6"
             ]
         ]
     },
@@ -968,8 +1039,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 5",
-        "tooltip": "",
+        "label": "Starlink",
+        "tooltip": "SSR 5",
         "group": "0054ec6595865cb5",
         "order": 5,
         "width": 0,
@@ -989,7 +1060,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 530,
+        "x": 540,
         "y": 320,
         "wires": [
             [
@@ -1016,8 +1087,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 6",
-        "tooltip": "",
+        "label": "RPi #1",
+        "tooltip": "SSR 6",
         "group": "0054ec6595865cb5",
         "order": 6,
         "width": 0,
@@ -1064,8 +1135,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 7",
-        "tooltip": "",
+        "label": "RPi #2",
+        "tooltip": "SSR 7",
         "group": "0054ec6595865cb5",
         "order": 7,
         "width": 0,
@@ -1112,8 +1183,8 @@
         "type": "ui_switch",
         "z": "ac8518c67cca00b6",
         "name": "",
-        "label": "SSR 8",
-        "tooltip": "",
+        "label": "Toad Link",
+        "tooltip": "SSR 8",
         "group": "0054ec6595865cb5",
         "order": 8,
         "width": 0,
@@ -1133,7 +1204,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 530,
+        "x": 540,
         "y": 500,
         "wires": [
             [
@@ -1639,6 +1710,22 @@
         "x": 1180,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "ab6e81fd2df51ce8",
+        "type": "link in",
+        "z": "ac8518c67cca00b6",
+        "name": "StarlinkButtonIn",
+        "links": [
+            "ea8d70c97288f962"
+        ],
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "c0650ff2bdb9d429"
+            ]
+        ]
     },
     {
         "id": "4dc1648db1522a08",
