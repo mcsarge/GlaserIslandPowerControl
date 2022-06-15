@@ -195,6 +195,24 @@
         "hidden": false
     },
     {
+        "id": "58239138.4af19",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "1b0057e0.037f48",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "1b0057e0.037f48",
+        "type": "ui_tab",
+        "name": "Test",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "546e1c49835206a3",
         "type": "rpi-gpio out",
         "z": "1e68cdaa21355b19",
@@ -1739,11 +1757,18 @@
         "height": "2",
         "options": [
             {
-                "label": "Lines (2 only, 10 char. each)",
-                "value": "line",
-                "type": "multiline",
+                "label": "Max 10 characters",
+                "value": "line1",
+                "type": "text",
                 "required": true,
-                "rows": 2
+                "rows": null
+            },
+            {
+                "label": "Max 10 characters",
+                "value": "line2",
+                "type": "text",
+                "required": false,
+                "rows": null
             },
             {
                 "label": "Display Time",
@@ -1754,7 +1779,8 @@
             }
         ],
         "formValue": {
-            "line": "",
+            "line1": "",
+            "line2": "",
             "mins": ""
         },
         "payload": "",
@@ -1765,7 +1791,7 @@
         "splitLayout": "",
         "className": "",
         "x": 210,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "91627d6510c6cb07",
@@ -1778,8 +1804,8 @@
         "type": "function",
         "z": "4d2fddc2c3c4ae2f",
         "name": "",
-        "func": "var local = context.get('data') || {};\nif (local.color === undefined) \n{\n    local.color = \"0,255,0\"\n}\n\nvar newMsg = {};\n\nif (msg.topic===\"color\")\n{\n    //Remember the color that was set.\n    local.color = msg.payload.substr(4, msg.payload.length - 5);\n    context.set('data', local);\n    return null;\n}\nelse if (msg.topic === \"clear\")\n{\n    newMsg.payload =\n    {\n        message: 'clear',\n        rgb: \"0.0.0\",\n        displayTime: 1\n    }\n}\nelse\n{\n    var theMsg = msg.payload.line.replace(\"\\n\",\"/\");\n\n    var theMins = 5;\n    if (msg.payload.mins != undefined)\n    {\n        theMins = msg.payload.mins\n    }\n\n    newMsg.payload = \n    {\n        message: theMsg,\n        rgb: local.color,\n        displayTime: theMins\n    }\n}\nreturn newMsg;\n",
-        "outputs": 1,
+        "func": "let msg2 = {}\nvar newMsg = {};\n\nvar local = context.get('data') || {};\nif (local.color === undefined) {\n    local.color = \"0,255,0\"\n}\n\nif (msg.topic === \"color\") {\n    //Remember the color that was set.\n    local.color = msg.payload.substr(4, msg.payload.length - 5);\n    context.set('data', local);\n    return ([null, null]);\n}\nelse if (msg.topic === \"clear\") {\n    newMsg.payload =\n    {\n        message: 'clear',\n        rgb: \"0.0.0\",\n        displayTime: 1\n    }\n    return ([newMsg, null])\n}\nelse {\n    let len1 = msg.payload.line1.length\n    var len2 = -1\n    var theText = msg.payload.line1\n    if (msg.payload.line2 !== null) {\n        len2 = msg.payload.line2.length\n        if (len2 > 0)\n            theText = theText + \"/\" + msg.payload.line2\n    }\n\n    if (len1 < 10 && len2 < 10) {\n\n        var theMins = 5;\n        if (msg.payload.mins != undefined) {\n            theMins = msg.payload.mins\n        }\n\n        newMsg.payload =\n        {\n            message: theText,\n\n            rgb: local.color,\n            displayTime: theMins\n        }\n        return ([newMsg, null]);\n    }\n\n    if (len1 > 10 && len2 > 10) {\n        msg2.payload = { line1: \"too long-\" + msg.payload.line1, line2: \"too long-\" + msg.payload.line2 }\n        node.send([null, msg2])\n    }\n    if (len1 > 10) {\n        msg2.payload = { line1: \"too long-\" + msg.payload.line1, line2: msg.payload.line2 }\n        node.send([null, msg2])\n    }\n    if (len2 > 10) {\n        msg2.payload = { line2: \"too long-\" + msg.payload.line2, line1: msg.payload.line1 }\n        node.send([null, msg2])\n    }\n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1790,6 +1816,9 @@
             [
                 "20206009481d630e",
                 "d8493fbee8735897"
+            ],
+            [
+                "4dc1648db1522a08"
             ]
         ]
     },
